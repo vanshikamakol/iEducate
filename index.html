@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iEducate - Learn and Grow</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrQdP7yyfdaXqyj7KnPNIEv0z6sXqKaXAdNhK0vLE9I6BuI93Qv+VThv4eP5AqD1i4SWFP/D0SvVb3ug3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Header with Sticky Navigation -->
+    <header>
+        <div class="container">
+            <h1>iEducate</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Background Image -->
+    <section id="home" class="banner">
+        <div class="overlay">
+            <div class="banner-content">
+                <h2>Welcome to iEducate</h2>
+                <p>Your one-stop solution for diverse online courses and educational services.</p>
+                <button onclick="scrollToCourses()">Explore Courses</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses">
+        <div class="container">
+            <h2>Our Courses</h2>
+            <div class="course-list">
+                <div class="course-item" onclick="showCourseDetails('Web Development', 'Learn HTML, CSS, and JavaScript to build stunning websites.')">
+                    <i class="fas fa-code"></i>
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS, JavaScript</p>
+                </div>
+                <div class="course-item" onclick="showCourseDetails('Data Science', 'Master data analysis, machine learning, and more.')">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Data Science</h3>
+                    <p>Python, Machine Learning</p>
+                </div>
+                <div class="course-item" onclick="showCourseDetails('App Development', 'Build cross-platform mobile applications.')">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>App Development</h3>
+                    <p>React Native, Flutter</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Course Details -->
+    <div id="courseModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>One-on-one Tutoring</h3>
+                    <p>Personalized tutoring sessions to help you excel.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Project Assistance</h3>
+                    <p>Get help with your projects from experienced mentors.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>Career Counseling</h3>
+                    <p>Guidance to help you navigate your career path.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-comments"></i>
+                    <h3>Mock Interviews</h3>
+                    <p>Prepare for interviews with realistic practice sessions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <h2>What Our Students Say</h2>
+            <div class="testimonial-list">
+                <div class="testimonial-item">
+                    <p>"iEducate has transformed my career. The courses are comprehensive and the instructors are top-notch."</p>
+                    <h4>- Bhavya</h4>
+                </div>
+                <div class="testimonial-item">
+                    <p>"The one-on-one tutoring helped me understand complex topics with ease. Highly recommended!"</p>
+                    <h4>- Smriti</h4>
+                </div>
+                <div class="testimonial-item">
+                    <p>"Thanks to iEducate's career counseling, I landed my dream job in data science."</p>
+                    <h4>- Jatin</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" placeholder="Your message" required></textarea>
+                </div>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer with Newsletter Subscription -->
+    <footer>
+        <div class="container footer-content">
+            <div class="subscribe">
+                <h3>Subscribe to our Newsletter</h3>
+                <form id="newsletterForm">
+                    <input type="email" id="newsletterEmail" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <div class="social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2024 iEducate. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
